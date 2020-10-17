@@ -5,8 +5,10 @@
 
 @section('content')
     @include('message')
-    <div class="col-md-12"><a href="{{route('ekle')}}" class="btn btn-success text-center btn-lg">Yeni Not</a></div>
-    <div class="col-md-12">
+    <div class="col-md-12 row">
+        <div class="col-md-6"><a href="{{route('ekle')}}" class="btn btn-success text-center">Yeni Not</a></div>
+        <div class="col-md-6"><strong>Toplam not: {{$data->count()}}</strong></div></div>
+    <div class="col-md-12 my-5">
         <table class="table">
             <thead>
             <tr>
