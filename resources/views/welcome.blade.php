@@ -12,18 +12,19 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Not</th>
-                <th scope="col">İşlemler</th>
+                <th style="width: 5%" scope="col">#</th>
+                <th style="width: 55%" scope="col">Not</th>
+                <th style="width: 20%" scope="col">Kategori</th>
+                <th style="width: 20%" scope="col">İşlemler</th>
             </tr>
             </thead>
             <tbody>
 
             @foreach($data as $value)
             <tr>
-
-                <th scope="row">{{$loop->index}}</th>
+                <th scope="row">{{$loop->iteration}}</th>
                 <td>{{$value->not}}</td>
+                <td>{{$value->kategori()->first()->ad}}</td>
 
                 <td>
                     <a href="{{route('sil',['id'=>$value->id])}}" class="btn btn-danger">Sil</a>

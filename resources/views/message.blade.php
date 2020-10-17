@@ -56,10 +56,7 @@
 
         <button type="button" class="close" data-dismiss="alert">×</button>
 
-        Formu kontrol ediniz.alanlarda  eksik olabilir.
-        @foreach($errors->all() as $error1)
-            {{$error1}}
-        @endforeach
+        Lütfen not giriniz.
 
     </div>
 

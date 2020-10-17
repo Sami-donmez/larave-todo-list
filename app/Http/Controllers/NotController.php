@@ -25,8 +25,12 @@ class NotController extends Controller
 
     public function update($id,Request $request)
     {
+        $validate = $request->validate([
+            "not" => "required"
+        ]);
         $not=Not::find($id);
         $not->not=$request->get('not');
+        $not->kategori_id=$request->get('kategori');
         $not->save();
         return redirect(url()->to('/'))->with('success', 'Güncelleme başarılı.');
     }
@@ -40,8 +44,12 @@ class NotController extends Controller
 
     public function add(Request $request)
     {
+        $validate = $request->validate([
+            "not" => "required"
+        ]);
         $not=new  Not();
         $not->not=$request->get('not');
+        $not->kategori_id=$request->get('kategori');
         $not->save();
         return redirect(url()->to('/'))->with('success', 'Ekleme başarılı.');
     }
