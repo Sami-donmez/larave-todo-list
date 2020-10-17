@@ -28,7 +28,7 @@ class NotController extends Controller
         $not=Not::find($id);
         $not->not=$request->get('not');
         $not->save();
-        return redirect(url()->to('/'))->with('success', 'Güncellemegit  başarılı.');
+        return redirect(url()->to('/'))->with('success', 'Güncelleme başarılı.');
     }
 
     public function delete($id,Request $request)
